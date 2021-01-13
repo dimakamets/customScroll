@@ -1,18 +1,12 @@
-language: ruby # Используем Ruby
-rvm:
-  - 2.3.3 # Используем Ruby Version Manager, версия Ruby 2.3.3
-
-before_script: # Перед запуском тестов делаем файл исполняемым
-  - chmod +x ./script/build
-
-script: ./script/build # Сам тест
-
-branches:
-  only: # Тестируем только master-ветку
-    - gh-pages
-
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # ускоряем установку html-proofer
-
-sudo: false # Доступ суперпользователя нам не нужен
+language: node_js
+node_js:
+  - "node"
+cache: npm
+script: npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: master
