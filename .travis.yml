@@ -4,7 +4,7 @@ node_js:
 cache: npm
 script: npm run build
 branches:
-  except:
+  only:
     - gh-pages
 deploy:
   provider: pages
