@@ -3,10 +3,12 @@ node_js:
   - "node"
 cache: npm
 script: npm run build
+branches:
+  except:
+    - gh-pages
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: "9214656a922ffca814b599de3dc5572751cfea2d"
   local_dir: dist
   on:
     branch: gh-pages
