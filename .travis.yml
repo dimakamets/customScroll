@@ -6,7 +6,7 @@ script: npm run build
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token: 9214656a922ffca814b599de3dc5572751cfea2d
   local_dir: dist
   on:
     branch: gh-pages
